@@ -1,0 +1,1 @@
+worker: python file_share_bot.py
