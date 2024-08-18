@@ -2,11 +2,21 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import dynamic from "next/dynamic"
+import "@solana/wallet-adapter-react-ui/styles.css"
 
-function App() {
-  return (
-    <h1 className="text-3xl font-bold underline text-center">Hello world!</h1>
-  );
+function MyApp({ Component, pageProps }) {
+    // Dynamically import WalletConnectionProvider without server-side rendering
+    const WalletConnectionProvider = dynamic(
+        () => import('../context/WalletConnectionProvider'),
+        { ssr: false }
+    )
+
+    return (
+        <WalletConnectionProvider>
+            <Component {...pageProps} />
+        </WalletConnectionProvider>
+    )
 }
 
-export default App;
+export default MyApp
