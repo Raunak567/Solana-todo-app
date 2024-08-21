@@ -1,11 +1,17 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import Carousel from "./components/Carousel";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <h1 className="text-3xl font-bold underline text-center">Hello world!</h1>
+    <Router>
+      <main className="max-w-[414px] mx-auto h-screen">
+        <Routes>
+          <Route path="/" element={<Carousel />} />
+          <Route path="/home" element={<Home />} />
+        </Routes>
+      </main>
+    </Router>
   );
 }
 
