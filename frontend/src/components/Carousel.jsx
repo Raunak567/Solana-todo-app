@@ -47,7 +47,6 @@ const Carousel = () => {
       <div
         className={`flex flex-col justify-between relative rounded-[32px] h-full ${pages[currentPage].bgColor}`}
       >
-        {/* Background Image */}
         <AnimatePresence>
           <motion.div
             key={currentPage}
@@ -59,12 +58,10 @@ const Carousel = () => {
           />
         </AnimatePresence>
 
-        {/* Top Text */}
         <div className="p-8 text-black text-5xl font-bold z-10">
           {pages[currentPage].text}
         </div>
 
-        {/* Bottom Navigation */}
         <div className="flex justify-between items-center p-8 z-10 mt-[70%]">
           {currentPage > 0 && (
             <button
@@ -74,18 +71,6 @@ const Carousel = () => {
               <img src={leftArrow} />
             </button>
           )}
-          {/* {currentPage < pages.length - 1 ? (
-            <button
-              onClick={handleNext}
-              className="bg-white text-black rounded-full p-4 mr-auto"
-            >
-              <img src={rightArrow} />
-            </button>
-          ) : (
-            <button className="bg-white text-black px-4 py-2 rounded ml-auto">
-              Try for Free
-            </button>
-          )} */}
           {currentPage < pages.length - 1 ? (
             <button
               onClick={handleNext}
