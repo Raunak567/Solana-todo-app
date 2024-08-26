@@ -4,17 +4,16 @@ import Profile from "../assets/Profile.svg";
 import Plus from "../assets/Plus.svg";
 import Images from "../assets/Images.svg";
 import TagSection from "../components/TagSection";
-import { WalletConnectButton, WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+import WalletConnectButton from "../components/WalletConnectButton";
 import { useWallet } from '@solana/wallet-adapter-react';
-
+import WalletConnectionProvider from "../context/WalletConnectionProvider";
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 
 function Home() {
   return (
     <div className="pt-4 px-4">
       <div className="flex justify-end items-center gap-4">
-        {/* <button className="bg-[#9471F8] flex text-white gap-2 px-6 py-3 rounded-md"> */}
-        <WalletConnectButton/>
-        {/* </button> */}
+        <WalletMultiButton/>
         <img src={Profile} />
       </div>
       <div className="mt-8">
